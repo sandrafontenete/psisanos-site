@@ -10,4 +10,5 @@ This is a fully static website built with:
 - HTML
 - CSS
 - JavaScript
+
 No frameworks or build tools are required. Files are served directly from the repository.
