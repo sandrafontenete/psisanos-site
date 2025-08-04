@@ -54,7 +54,7 @@ function initDynamicYear() {
       : `${START_YEAR}–${currentYear}`;
 }
 
-// ===== Consent Mode default: SEMPRE definir antes do GTM (recomendado) =====
+//  === Google Tag Manager Consent Mode v2 default values
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: "default_consent",
@@ -71,7 +71,18 @@ window.dataLayer.push({
  * Ensures script is only loaded once.
  */
 function loadTagManager() {
-  // Avoid loading twice
+  // Check if GTM ID is valid
+  // GTM ID should be in the format "GTM-XXXXXX"
+  if (
+    typeof GTM_ID !== "string" ||
+    GTM_ID.trim() === "" ||
+    !/^GTM-[A-Z0-9]+$/.test(GTM_ID.trim())
+  ) {
+    console.warn("GTM ID not defined. GTM will not be loaded.");
+    return;
+  }
+
+  // Check if GTM script is already loaded
   if (document.getElementById("gtm-script")) return;
 
   // Create the dataLayer array if not present
@@ -122,9 +133,14 @@ function updateConsentMode(granted) {
  * @returns {{ consent: 'accepted' | 'rejected' | null, timestamp: string | null }}
  */
 function getStoredConsent() {
-  const consent = localStorage.getItem("cookieConsent");
-  const timestamp = localStorage.getItem("cookieConsentAt");
-  return { consent, timestamp };
+  try {
+    const consent = localStorage.getItem("cookieConsent");
+    const timestamp = localStorage.getItem("cookieConsentAt");
+    return { consent, timestamp };
+  } catch (e) {
+    // If localStorage access fails, return null values
+    return { consent: null, timestamp: null };
+  }
 }
 
 /**

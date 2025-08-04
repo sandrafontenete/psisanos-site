@@ -226,7 +226,7 @@ a:hover {
 }
 
 .logo-text {
-  font-size: 1.225rem; /* ~22px */
+  font-size: 1.333rem; /* ~24px */
   letter-spacing: 0.5px;
   color: var(--color-text-secondary) !important;
 }
@@ -345,6 +345,10 @@ img {
   display: block; /* Eliminate inline spacing */
   object-fit: none; /* No scaling — use natural crop */
   object-position: 15% 65%; /* Horizontal Alignment, Vertical Alignment */
+}
+
+.button-style-2 {
+  margin-left: 56px;
 }
 
 .team-higlight-text {
@@ -591,6 +595,10 @@ footer .social-icons a:hover {
     font-size: 1.25rem !important; /* 20px */
   }
 
+  .logo-text {
+    font-size: 1.435rem; /* ~23px */
+  }
+
   .image-style-1 {
     width: 100%; /* Full width */
     height: auto; /* Maintain aspect ratio */
@@ -633,5 +641,9 @@ footer .social-icons a:hover {
   .image-style-2 {
     width: 100%;
     height: 300px;
+  }
+
+  .button-style-2 {
+    margin-left: 0px;
   }
 }
