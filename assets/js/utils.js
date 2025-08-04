@@ -2,8 +2,8 @@
 
 // Constants
 const START_YEAR = 2025;
-const MAX_CONSENT_AGE_DAYS = 30;
-const GA_MEASUREMENT_ID = "G-01PRWX7K9D"; // Replace for your GA4 ID
+const MAX_CONSENT_AGE_DAYS = 60;
+const GA_MEASUREMENT_ID = "GTM-KWWXZQC6"; // Replace for your GA4 ID
 
 // Cache DOM elements
 // Navbar elements
@@ -66,13 +66,23 @@ function loadAnalytics() {
   }
   window.gtag = gtag;
 
+  // Set default consent (denied) before loading GA
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+  });
+
+  // Load the GA4 script
   const script = document.createElement("script");
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
 
+  // Initialize GA4 with IP anonymization
   gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+  gtag("config", GA_MEASUREMENT_ID, {
+    anonymize_ip: true,
+  });
 }
 
 /**
@@ -121,6 +131,13 @@ function initCookieConsent() {
     localStorage.setItem("cookieConsent", "accepted");
     localStorage.setItem("cookieConsentAt", new Date().toISOString());
     banner.setAttribute("hidden", "true");
+
+    // Update consent to granted before activating tracking
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    });
+
     loadAnalytics();
   });
 
