@@ -1,0 +1,10 @@
+# robots.txt for psisanos.pt
+
+User-agent: *
+Allow: /
+
+# Block informational pages not relevant for SEO:
+Disallow: /politica-privacidade/
+Disallow: /termos-condicoes/
+
+Sitemap: https://psisanos.pt/sitemap.xml

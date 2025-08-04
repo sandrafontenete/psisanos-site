@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+  <head>
+    <!-- Basic metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO fundamentals -->
+    <title>PsiSanos - Apoio Parental</title>
+    <meta
+      name="description"
+      content="Apoio parental para famílias de crianças e adolescentes com doenças crónicas ou perturbações do neurodesenvolvimento."
+    />
+    <link rel="canonical" href="https://www.psisanos.pt/contactos/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Favicons (with fallback) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/img/icon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/icon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/img/icon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="PsiSanos" />
+    <link rel="manifest" href="/assets/img/icon/site.webmanifest" />
+
+    <!-- Open Graph metadata (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="PsiSanos - Apoio Parental" />
+    <meta
+      property="og:description"
+      content="Apoio parental para famílias de crianças e adolescentes com doenças crónicas ou perturbações do neurodesenvolvimento."
+    />
+    <meta
+      property="og:image"
+      content="https://www.psisanos.pt/assets/img/img-og.webp"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.psisanos.pt/apoio-parental/" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:site_name" content="PsiSanos" />
+
+    <!-- Twitter Card metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PsiSanos - Apoio Parental" />
+    <meta
+      name="twitter:description"
+      content="Apoio parental para famílias de crianças e adolescentes com doenças crónicas ou perturbações do neurodesenvolvimento."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.psisanos.pt/assets/img/img-og.webp"
+    />
+    <meta name="twitter:site" content="@PsiSanos" />
+
+    <!-- Resource preloading (for performance) -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/assets/img/hero.webp"
+    />
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Structured data (JSON-LD format for Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PsiSanos",
+        "url": "https://www.psisanos.pt",
+        "logo": "https://www.psisanos.pt/assets/img/logo.webp",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "email": "mailto:geral@psisanos.pt",
+            "contactType": "customer service",
+            "areaServed": "PT",
+            "availableLanguage": ["Portuguese"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+351928342636",
+            "contactType": "customer service",
+            "areaServed": "PT",
+            "availableLanguage": ["Portuguese"]
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Leiria",
+          "addressCountry": "PT"
+        }
+      }
+    </script>
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center"
+            href="/"
+            aria-label="Página inicial da PsiSanos"
+          >
+            <picture class="me-2">
+              <source srcset="/assets/img/logo.webp" type="image/webp" />
+              <img
+                src="/assets/img/logo.png"
+                class="logo-image"
+                alt="Logótipo da PsiSanos"
+              />
+            </picture>
+            <span class="logo-text">PsiSanos</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Mostrar ou ocultar menu de navegação"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/sobre-nos/">Sobre Nós</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  aria-current="page"
+                  href="#"
+                  id="servicesDropdown"
+                  aria-expanded="false"
+                  aria-label="Mostrar submenu de Serviços"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Serviços
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                  <li>
+                    <a class="dropdown-item" href="/servicos/consultas/"
+                      >Consultas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item active"
+                      aria-current="page"
+                      href="/servicos/apoio-parental/"
+                      >Apoio Parental</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contactos/"> Contactos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Intro Section -->
+      <section aria-labelledby="intro-heading">
+        <div class="container px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6 overflow-hidden image-style-1">
+              <img
+                src="/assets/img/parental01.webp"
+                class="w-100 h-100 object-fit-cover rounded-3 shadow-sm"
+                alt="Mãe a acompanhar de mão dada a filha, criança"
+              />
+            </div>
+            <div class="col-lg-6">
+              <h1 id="intro-heading" class="mb-3">
+                Apoio Psicológico Parental
+              </h1>
+              <p>
+                Intervenção individual para mães e pais que enfrentam os
+                desafios emocionais, relacionais e identitários associados à
+                parentalidade de crianças e adolescentes com diagnósticos
+                médicos ou neuropsicológicos complexos.
+              </p>
+              <p>
+                Este acompanhamento psicológico individual oferece um espaço
+                seguro, ético e clínico para cuidar da sua saúde mental e
+                emocional enquanto enfrenta os desafios da parentalidade
+                atípica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Context Section -->
+      <section aria-labelledby="contex-heading">
+        <div class="py-3 box-alt">
+          <div class="container px-4 py-5">
+            <div class="row flex-lg-row align-items-center g-5 py-5">
+              <div
+                class="col-10 col-sm-8 col-lg-6 overflow-hidden image-style-1"
+              >
+                <img
+                  src="/assets/img/parental02.webp"
+                  class="w-100 h-100 object-fit-cover rounded-3 shadow-sm"
+                  alt="Menino com diabetes a fazer medição de glicemia"
+                  loading="lazy"
+                />
+              </div>
+              <div class="col-lg-6">
+                <h2 id="contex-heading" class="alt-h1 mb-3">Enquadramento</h2>
+                <p>
+                  A parentalidade em contextos de maior exigência, quando uma
+                  criança recebe um diagnóstico de Doença Crónica ou Perturbação
+                  do Neurodesenvolvimento, pode ter um impacto profundo na vida
+                  emocional, relacional e pessoal dos pais.
+                </p>
+                <p>
+                  É comum surgirem sentimentos de luto, culpa, frustração, medo
+                  do futuro, solidão, esgotamento e dificuldades de comunicação
+                  no casal. Muitos pais descrevem uma perda de espaço próprio, a
+                  sensação de viver em modo de sobrevivência e uma redefinição
+                  forçada da identidade pessoal e familiar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Objectives Section -->
+      <section aria-labelledby="objectives-heading">
+        <div class="container px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-5 overflow-hidden image-style-1">
+              <img
+                src="/assets/img/professional02.webp"
+                class="w-100 h-100 object-fit-cover rounded-3 shadow-sm"
+                alt="Terapeuta a delinear os objetivos da intervenção"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-7">
+              <h2 id="objectives-heading" class="alt-h1 mb-3">
+                Objetivos da intervenção
+              </h2>
+              <ul>
+                <li>
+                  Trabalhar o luto parental (pela ideia do filho idealizado)
+                </li>
+                <li>
+                  Acolher e explorar as emoções associadas ao diagnóstico da
+                  criança
+                </li>
+                <li>
+                  Reduzir o sofrimento emocional e prevenir burnout parental
+                </li>
+                <li>
+                  Reforçar a autoestima, os limites pessoais e a autonomia
+                  emocional
+                </li>
+                <li>
+                  Promover o realinhamento com valores pessoais e sentido de
+                  vida
+                </li>
+                <li>
+                  Desenvolver competências de autorregulação emocional e
+                  autocuidado
+                </li>
+                <li>
+                  Refletir sobre o impacto na relação conjugal e familiar
+                  (quando pertinente)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Areas Section -->
+      <section aria-labelledby="areas-heading">
+        <div class="py-3 box-alt">
+          <div class="container px-4 py-5">
+            <div class="row flex-lg-row align-items-center g-5 py-5">
+              <div
+                class="col-10 col-sm-8 col-lg-5 overflow-hidden image-style-1"
+              >
+                <img
+                  src="/assets/img/intervention.webp"
+                  class="w-100 h-100 object-fit-cover rounded-3 shadow-sm"
+                  alt="Terapeuta em sessão de psicologia clínica com uma mãe"
+                  loading="lazy"
+                />
+              </div>
+              <div class="col-lg-7">
+                <h2 id="areas-heading" class="alt-h1 mb-3">
+                  Áreas frequentemente abordadas
+                </h2>
+                <ul>
+                  <li>Sobrecarga emocional e mental</li>
+                  <li>Sentimento de culpa</li>
+                  <li>Ansiedade face ao futuro da criança</li>
+                  <li>Isolamento social e comparação com outras famílias</li>
+                  <li>Conflitos conjugais associados à parentalidade</li>
+                  <li>
+                    Dificuldade em equilibrar os vários papéis da vida
+                    (profissional, conjugal, pessoal e parental)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- For Section -->
+      <section aria-labelledby="for-heading">
+        <div class="container px-4 py-5">
+          <div class="row flex-lg-row-reverse lign-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-4 overflow-hidden image-style-1">
+              <img
+                src="/assets/img/parental03.webp"
+                class="w-100 h-100 object-fit-cover rounded-3 shadow-sm"
+                alt="Mãe a amparar o filho, criança, agarrando-o pela mão"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-8">
+              <h2 id="for-heading" class="alt-h1 mb-3">É para si?</h2>
+              <div class="accordion accordion-flush" id="forYouAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="heading1">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse1"
+                      aria-expanded="true"
+                      aria-controls="collapse1"
+                    >
+                      A quem se destina este companhamento
+                    </button>
+                  </h3>
+                  <div
+                    id="collapse1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#forYouAccordion"
+                    aria-labelledby="heading1"
+                  >
+                    <div class="accordion-body">
+                      <p>
+                        Este espaço é dirigido a mães, pais ou cuidadores de
+                        crianças e adolescentes com:
+                      </p>
+                      <ul>
+                        <li>
+                          Doenças crónicas pediátricas (como diabetes, asma,
+                          epilepsia, doenças inflamatórias, fibrose quística,
+                          doenças genéticas raras, entre outras)
+                        </li>
+                        <li>
+                          Perturbações do neurodesenvolvimento (como Perturbação
+                          do Desenvolvimento Intelectual, PHDA, Perturbação do
+                          Espectro do Autismo, entre outras)
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="heading2">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse2"
+                      aria-expanded="false"
+                      aria-controls="collapse2"
+                    >
+                      O que este serviço não abrange
+                    </button>
+                  </h3>
+                  <div
+                    id="collapse2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#forYouAccordion"
+                    aria-labelledby="heading2"
+                  >
+                    <div class="accordion-body">
+                      <p>
+                        Este acompanhamento foca-se no apoio psicológico
+                        individual dos pais ou cuidadores. Por isso, não inclui:
+                      </p>
+                      <ul>
+                        <li>Intervenção direta com a criança ou adolescente</li>
+                        <li>
+                          Programas estruturados de orientação ou treino
+                          parental
+                        </li>
+                        <li>
+                          Participação obrigatória do casal - o trabalho é
+                          individual e adaptado às necessidades de cada pessoa
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <section class="footer-top">
+        <div class="container">
+          <div class="d-md-flex align-items-top justify-content-between gy-4">
+            <div class="col-md-4" aria-label="Sobre a PsiSanos">
+              <h2 class="alt-h4 logo-tex">PsiSanos</h2>
+              <p>
+                Se está pronto(a) para dar este passo, saiba que na PsiSanos
+                encontra um espaço onde será escutado com respeito, empatia e
+                humanidade. Um lugar onde libertar a mente pode significar
+                transformar a sua vida.
+              </p>
+
+              <div class="social-icons">
+                <a
+                  href="https://wa.me/351928342636"
+                  aria-label="WhatsApp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <nav class="col-md-3 col-xl-2" aria-label="Links de rodapé">
+              <h2 class="alt-h5 title-sm">Links</h2>
+              <ul class="list-unstyled ps-0 footer-links">
+                <li><a href="/faq/">FAQ's</a></li>
+                <li>
+                  <a href="/politica-privacidade/">Política de Privacidade</a>
+                </li>
+                <li><a href="/termos-condicoes/">Termos e Condições</a></li>
+                <li>
+                  <a
+                    href="https://www.livroreclamacoes.pt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Livro de Reclamações</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div class="col-md-4" aria-label="Informação de contacto">
+              <h2 class="alt-h5 title-sm">Contactos</h2>
+              <div class="footer-contacts">
+                <p>
+                  Para agendar a sua consulta ou obter mais informações, entre
+                  em contacto através do email
+                  <a href="mailto:geral@psisanos.pt">geral@psisanos.pt</a>
+                </p>
+              </div>
+              <div class="container py-3">
+                <div class="row">
+                  <div
+                    class="col-sm-6 d-flex align-items-start align-self-center py-2"
+                  >
+                    <img
+                      src="/assets/img/logo-ers.webp"
+                      style="max-height: 55px; width: auto"
+                      alt="Logótipo da Entidade Reguladora da Saúde (ERS)"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    class="col-sm-6 d-flex align-items-start align-self-center py-2"
+                  >
+                    <img
+                      src="/assets/img/logo-op.webp"
+                      style="max-height: 55px; width: auto"
+                      alt="Logótipo da Ordem dos Psicólogos Portugueses"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer-bottom">
+        <div class="container">
+          <div class="row justify-content-between gy-3">
+            <div class="col">
+              <p class="mb-0">
+                <span
+                  aria-label="Publicado pela primeira vez em 2025 e atualizado até ao ano atual"
+                >
+                  &copy; <span id="yearCopyright"></span>
+                </span>
+                PsiSanos. Todos os direitos reservados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div
+      id="cookie-banner"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-banner-title"
+      class="position-fixed bottom-0 start-0 end-0 border-top shadow-sm p-2 py-4"
+    >
+      <!-- Close Button in Top-Right -->
+      <button
+        id="close-banner"
+        type="button"
+        class="position-absolute top-0 end-0 m-2"
+        aria-label="Fechar Banner de Cookies"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          />
+        </svg>
+      </button>
+
+      <div class="container">
+        <div class="row align-items-center">
+          <h2 id="cookie-banner-title" class="alt-h4 visually-hidden">
+            Aviso de Cookies
+          </h2>
+          <div class="col-12 col-lg">
+            <p class="mb-2 mb-lg-0 text-center text-lg-start">
+              Este site utiliza cookies essenciais ao seu funcionamento, e pode
+              recorrer a cookies de análise e de terceiros para melhorar a sua
+              experiência de navegação. Estes cookies apenas serão utilizados
+              mediante o seu consentimento. Para mais informações, consulte a
+              nossa
+              <a href="/politica-privacidade/" target="_blank"
+                >Política de Privacidade</a
+              >.
+            </p>
+          </div>
+          <div class="col-12 col-lg-auto text-center text-lg-end">
+            <button id="accept-cookies" class="btn btn-brand-secondary btn-sm">
+              Aceitar Cookies
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Utils JS -->
+    <script src="/assets/js/utils.js"></script>
+  </body>
+</html>
