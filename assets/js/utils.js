@@ -3,7 +3,7 @@
 // Constants
 const START_YEAR = 2025;
 const MAX_CONSENT_AGE_DAYS = 30;
-const GA_MEASUREMENT_ID = "G-XXXXXXX"; // Replace for your GA4 ID
+const GA_MEASUREMENT_ID = "G-01PRWX7K9D"; // Replace for your GA4 ID
 
 // Cache DOM elements
 // Navbar elements
