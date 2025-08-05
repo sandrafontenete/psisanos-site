@@ -5,7 +5,7 @@
 >
   <!-- Home Page -->
   <url>
-    <loc>https://psisanos.pt/</loc>
+    <loc>https://www.psisanos.pt/</loc>
     <lastmod>2025-07-27</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
@@ -13,49 +13,50 @@
 
   <!-- Main navigation pages -->
   <url>
-    <loc>https://psisanos.pt/sobre-nos/</loc>
+    <loc>https://www.psisanos.pt/sobre-nos/</loc>
     <lastmod>2025-08-01</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://psisanos.pt/servicos/consultas/</loc>
+    <loc>https://www.psisanos.pt/servicos/consultas/</loc>
     <lastmod>2025-08-01</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://psisanos.pt/servicos/apoio-parental/</loc>
+    <loc>https://www.psisanos.pt/servicos/apoio-parental/</loc>
     <lastmod>2025-08-01</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://psisanos.pt/contactos/</loc>
+    <loc>https://www.psisanos.pt/contactos/</loc>
+    <lastmod>2025-08-01</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Informational pages -->
   <url>
-    <loc>https://psisanos.pt/faq/</loc>
+    <loc>https://www.psisanos.pt/faq/</loc>
     <lastmod>2025-01-01</lastmod>
     <priority>0.4</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
-    <loc>https://psisanos.pt/politica-privacidade/</loc>
+    <loc>https://www.psisanos.pt/politica-privacidade/</loc>
     <lastmod>2025-01-01</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
-    <loc>https://psisanos.pt/termos-condicoes/</loc>
+    <loc>https://www.psisanos.pt/termos-condicoes/</loc>
     <lastmod>2025-01-01</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>

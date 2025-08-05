@@ -7,4 +7,4 @@ Allow: /
 Disallow: /politica-privacidade/
 Disallow: /termos-condicoes/
 
-Sitemap: https://psisanos.pt/sitemap.xml
+Sitemap: https://www.psisanos.pt/sitemap.xml
