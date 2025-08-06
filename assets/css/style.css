@@ -239,7 +239,7 @@ a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: scroll; /* no parallax */
   display: flex;
   align-items: center;
   position: relative;
@@ -389,7 +389,7 @@ img {
 }
 
 .icon {
-  height: calc(1.1625rem + 0.9vw);
+  height: calc(1.555rem + 0.9vw); /* h3 + viewport width */
   color: var(--color-text-secondary);
   fill: currentColor;
   min-width: 40px;
@@ -411,6 +411,13 @@ img {
 
 .accordion-body {
   font-size: 1rem !important; /* 18px */
+}
+
+/* === Pricing Cards === */
+.row-cols-1 .col-style-1 {
+  max-width: 325px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pricing-card-title {
@@ -500,7 +507,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a svg {
-  height: 1.555rem; /* ~28px */
+  height: 1.775rem; /* ~32px */
   fill: currentColor;
 }
 
@@ -628,6 +635,10 @@ footer .social-icons a:hover {
     height: 300px; /* Fixed height */
   }
 
+  .icon {
+    height: calc(1.675rem + 0.9vw); /* h3 + viewport width */
+  }
+
   .price-text-1 {
     font-size: 1.435rem; /* ~23px */
   }
@@ -651,12 +662,6 @@ footer .social-icons a:hover {
 
 /* === Responsive: content lower than S === */
 @media (max-width: 575.98px) {
-  .row-cols-1 .col-style-1 {
-    max-width: 325px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .row-cols-1 .price-highlight-field {
     margin-top: calc(1.5rem + 2rem); /* py-4 + 36px */
   }
