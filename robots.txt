@@ -1,4 +1,4 @@
-# robots.txt for psisanos.pt
+# robots.txt for www.psisanos.pt
 
 User-agent: *
 Allow: /
