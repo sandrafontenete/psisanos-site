@@ -324,13 +324,12 @@ img {
 .image-style-1,
 .image-style-2,
 .image-style-3,
-.image-style-4,
-.image-style-5 {
+.image-style-4 {
   height: auto; /* Maintain aspect ratio */
 }
 
 /* == Reposition images in specific style == */
-.image-style-5 img {
+.image-style-4 img {
   display: block; /* Eliminate inline spacing */
   object-fit: none; /* No scaling — use natural crop */
   object-position: 15% 65%; /* Horizontal Alignment, Vertical Alignment */
@@ -599,19 +598,17 @@ footer .social-icons a:hover {
   .image-style-1,
   .image-style-2,
   .image-style-3,
-  .image-style-4,
-  .image-style-5 {
+  .image-style-4 {
     width: 100%; /* Full width */
   }
 
   .image-style-1,
-  .image-style-5 {
+  .image-style-4 {
     height: 300px; /* Fixed height */
   }
 
   .image-style-2,
-  .image-style-3,
-  .image-style-4 {
+  .image-style-3 {
     height: 450px; /* Fixed height */
   }
 
