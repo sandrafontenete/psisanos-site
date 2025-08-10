@@ -83,6 +83,10 @@ body .box-alt {
   background: var(--color-bg-surface-alt);
 }
 
+body .box-alt-border {
+  border-top: 1px solid var(--color-bg-border);
+}
+
 h1,
 h2,
 h3,
