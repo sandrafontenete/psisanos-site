@@ -64,6 +64,15 @@
 
   /* === Images === */
   --image-hero: url("/assets/img/hero.webp");
+
+  /* === Navbar height calculation === */
+  --navbar-padding-y: 0.5rem; /* vertical padding - based on --bs-navbar-padding-y: 0.5rem */
+  --navbar-brand-padding-y: 0.3125rem; /* vertical padding - based in --bs-navbar-brand-padding-y: 0.3125rem */
+  --logo-image-height: 35px; /* fixed height of logo */
+  --navbar-height: calc(
+    var(--logo-image-height) + (2 * var(--navbar-padding-y)) +
+      (2 * var(--navbar-brand-padding-y))
+  );
 }
 
 /* === Theme === */
@@ -77,6 +86,7 @@ body {
   line-height: 1.6;
   color: var(--color-text-primary);
   background-color: var(--color-bg-base);
+  padding-top: var(--navbar-height); /* Space for fixed navbar */
 }
 
 body .box-alt {
@@ -225,8 +235,9 @@ a:hover {
 }
 
 .logo-image {
-  width: 35px !important;
-  height: 35px !important;
+  height: var(--logo-image-height) !important;
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
+  width: auto;
 }
 
 .logo-text {
@@ -238,7 +249,7 @@ a:hover {
 .hero-section {
   background: var(--image-hero);
   padding-top: 100px;
-  height: 92vh;
+  height: 90vh;
   min-height: 600px;
   background-size: cover;
   background-position: center;
@@ -450,6 +461,12 @@ img {
 
 .price-highlight-border {
   border-color: var(--color-text-secondary);
+}
+
+.contacts-higlight-text {
+  font-weight: 700;
+  font-size: 1.225rem; /* ~22px */
+  color: var(--color-text-secondary);
 }
 
 footer {
