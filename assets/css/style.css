@@ -89,6 +89,10 @@ body {
   padding-top: var(--navbar-height); /* Space for fixed navbar */
 }
 
+body.no-fix-height {
+  padding-top: 0; /* Ignore remove space for fixed navbar */
+}
+
 body .box-alt {
   background: var(--color-bg-surface-alt);
 }
