@@ -249,7 +249,7 @@ a:hover {
 .hero-section {
   background: var(--image-hero);
   padding-top: 100px;
-  height: 90vh;
+  height: 100vh;
   min-height: 600px;
   background-size: cover;
   background-position: center;
