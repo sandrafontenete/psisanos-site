@@ -473,6 +473,41 @@ img {
   color: var(--color-text-secondary);
 }
 
+/* === Table Styles === */
+.table-style {
+  max-width: 425px; /* Maximum width for the table */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table thead,
+.table thead tr,
+.table thead th {
+  background-color: var(--color-bg-base) !important; /* Header Background */
+}
+
+.table.table > tbody > tr:nth-of-type(odd) > td,
+.table.table > tbody > tr:nth-of-type(odd) > th {
+  background-color: var(--color-bg-surface) !important; /*Odd Line Background */
+}
+
+.table.table > tbody > tr:nth-of-type(even) > td,
+.table.table > tbody > tr:nth-of-type(even) > th {
+  background-color: var(--color-bg-base) !important; /*Even Line Background */
+}
+
+.table.table,
+.table.table th,
+.table.table td {
+  border: 1px solid var(--color-bg-border) !important; /* Table Border Color */
+}
+
+.table tbody,
+.table tbody td,
+.table tbody th {
+  color: var(--color-text-primary) !important; /* Table Text Color */
+}
+
 footer {
   background-color: var(--color-bg-surface);
   color: var(--color-text-primary);
