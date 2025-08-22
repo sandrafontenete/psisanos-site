@@ -259,7 +259,7 @@ a:hover {
 .hero-section {
   background: var(--image-hero);
   padding-top: 100px;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   min-height: 600px;
   background-size: cover;
   background-position: center;
@@ -392,6 +392,7 @@ img {
 
 .team-linkedin-icon svg {
   height: 1.555rem; /* ~28px */
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   fill: currentColor;
 }
 
@@ -403,9 +404,9 @@ img {
 
 .icon {
   height: calc(1.555rem + 0.9vw); /* h3 + viewport width */
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   color: var(--color-text-secondary);
   fill: currentColor;
-  min-width: 40px;
 }
 
 .accordion-button:not(.collapsed) {
@@ -471,6 +472,16 @@ img {
 
 .price-highlight-border {
   border-color: var(--color-text-secondary);
+}
+
+.payment-icons-1 {
+  max-height: 65px;
+  width: auto;
+}
+
+.payment-icons-2 {
+  max-height: 45px;
+  width: auto;
 }
 
 .contacts-higlight-text {
@@ -560,14 +571,20 @@ footer .social-icons a {
   transition: all 0.3s ease;
 }
 
-footer .social-icons a svg {
+footer .social-icons svg {
   height: 1.775rem; /* ~32px */
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   fill: currentColor;
 }
 
 footer .social-icons a:hover {
   color: var(--color-link-hover);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer .external-icons {
+  max-height: 55px;
+  width: auto;
 }
 
 #cookie-banner {
@@ -592,6 +609,7 @@ footer .social-icons a:hover {
 
 #close-banner svg {
   height: 0.835rem; /* ~15px */
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   fill: currentColor;
 }
 
@@ -708,6 +726,12 @@ footer .social-icons a:hover {
     padding-top: var(--navbar-height-md);
   }
 
+  .hero-section-badge.show {
+    top: calc(
+      var(--navbar-height-md) + 40px
+    ); /* Adjust position below navbar */
+  }
+
   .ul-style-1 {
     margin-bottom: 0px !important;
   }
@@ -717,6 +741,12 @@ footer .social-icons a:hover {
 @media (max-width: 575.98px) {
   body {
     padding-top: var(--navbar-height-sm);
+  }
+
+  .hero-section-badge.show {
+    top: calc(
+      var(--navbar-height-sm) + 40px
+    ); /* Adjust position below navbar */
   }
 
   .row-cols-1 .price-highlight-field {
