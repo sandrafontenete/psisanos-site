@@ -31,10 +31,10 @@
   --font-body: "Lato", "Helvetica", "Arial", sans-serif;
 
   /* === Base Colors === */
-  --color-bg-base: #ffffff; /* Body Background */
-  --color-bg-surface: #e0e7e8; /* Navbar & Footer Background*/
-  --color-bg-surface-alt: #edf4f5; /* Body Alternative Background */
-  --color-bg-border: #d6dcdd; /* Background Border*/
+  --color-bg-base: #ffffff; /* Body background */
+  --color-bg-surface: #e0e7e8; /* Navbar & footer background*/
+  --color-bg-surface-alt: #edf4f5; /* Body alternative background */
+  --color-bg-border: #d6dcdd; /* Background border*/
 
   /* === Text Colors === */
   --color-text-primary: #333333;
@@ -65,10 +65,10 @@
   /* === Images === */
   --image-hero: url("/assets/img/hero.webp");
 
-  /* === Navbar height calculation === */
-  --navbar-padding-y: 0.5rem; /* vertical padding - based on --bs-navbar-padding-y: 0.5rem */
-  --navbar-brand-padding-y: 0.3125rem; /* vertical padding - based in --bs-navbar-brand-padding-y: 0.3125rem */
-  --logo-image-height: 35px; /* fixed height of logo */
+  /* === Navbar Height Calculation === */
+  --navbar-padding-y: 0.5rem; /* Vertical padding - based on --bs-navbar-padding-y: 0.5rem */
+  --navbar-brand-padding-y: 0.3125rem; /* Vertical padding - based in --bs-navbar-brand-padding-y: 0.3125rem */
+  --logo-image-height: 35px; /* Fixed height of logo */
   --navbar-height: calc(
     var(--logo-image-height) + (2 * var(--navbar-padding-y)) +
       (2 * var(--navbar-brand-padding-y))
@@ -266,14 +266,14 @@ a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: scroll; */ /* no parallax */
+  /* background-attachment: scroll; */ /* No parallax */
   z-index: 0;
 }
 
 .hero-section::before {
   content: "";
   position: absolute;
-  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  inset: 0; /* Shorthand for top:0; right:0; bottom:0; left:0 */
   background-color: rgba(0, 0, 0, 0.3); /* Overlay with transparency */
   z-index: 1;
 }
@@ -333,7 +333,7 @@ a:hover {
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(224, 231, 232, 0.8); /* Initial shadow --color-btn-bg-secondary-hover */
+    box-shadow: 0 0 0 0 rgba(224, 231, 232, 0.8); /* Initial shadow, rgb from --color-btn-bg-secondary-hover */
   }
   70% {
     transform: scale(1.05);
@@ -406,7 +406,7 @@ img {
 .image-style-4 img {
   display: block; /* Eliminate inline spacing */
   object-fit: none; /* No scaling — use natural crop */
-  object-position: 15% 65%; /* Horizontal Alignment, Vertical Alignment */
+  object-position: 15% 65%; /* Horizontal alignment, vertical alignment */
 }
 
 .button-style-2 {
@@ -452,7 +452,7 @@ img {
 }
 
 .icon {
-  height: calc(1.555rem + 0.9vw); /* h3 + viewport width */
+  height: calc(1.555rem + 0.9vw); /* Match h3 + viewport width */
   aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   color: var(--color-text-secondary);
   fill: currentColor;
@@ -510,7 +510,7 @@ img {
 
 .price-highlight {
   height: 2rem; /* 36px */
-  margin-top: 1.5rem; /* py-4 */
+  margin-top: 1.5rem; /* Match Bootstrap's py-4 */
 }
 
 .price-highlight-field {
@@ -549,29 +549,29 @@ img {
 .table thead,
 .table thead tr,
 .table thead th {
-  background-color: var(--color-bg-base) !important; /* Header Background */
+  background-color: var(--color-bg-base) !important; /* Header background */
 }
 
 .table.table > tbody > tr:nth-of-type(odd) > td,
 .table.table > tbody > tr:nth-of-type(odd) > th {
-  background-color: var(--color-bg-surface) !important; /*Odd Line Background */
+  background-color: var(--color-bg-surface) !important; /*Odd line background */
 }
 
 .table.table > tbody > tr:nth-of-type(even) > td,
 .table.table > tbody > tr:nth-of-type(even) > th {
-  background-color: var(--color-bg-base) !important; /*Even Line Background */
+  background-color: var(--color-bg-base) !important; /*Even line background */
 }
 
 .table.table,
 .table.table th,
 .table.table td {
-  border: 1px solid var(--color-bg-border) !important; /* Table Border Color */
+  border: 1px solid var(--color-bg-border) !important; /* Table border color */
 }
 
 .table tbody,
 .table tbody td,
 .table tbody th {
-  color: var(--color-text-primary) !important; /* Table Text Color */
+  color: var(--color-text-primary) !important; /* Table text color */
 }
 
 footer {
@@ -765,7 +765,7 @@ footer .external-icons {
   }
 
   .icon {
-    height: calc(1.675rem + 0.9vw); /* h3 + viewport width */
+    height: calc(1.675rem + 0.9vw); /* Match h3 + viewport width */
   }
 
   .price-text-1 {
@@ -791,6 +791,10 @@ footer .external-icons {
     font-size: 1.125rem; /* 18px */
   }
 
+  .hero-badge {
+    right: 7.5vw;
+  }
+
   .ul-style-1 {
     margin-bottom: 0px !important;
   }
@@ -800,6 +804,10 @@ footer .external-icons {
 @media (max-width: 575.98px) {
   body {
     padding-top: var(--navbar-height-sm);
+  }
+
+  .hero-badge {
+    right: 5vw;
   }
 
   .row-cols-1 .price-highlight-field {
@@ -817,6 +825,6 @@ footer .external-icons {
     margin-top: 7.5vh; /* Reduce to 7.5% of the viewport height */
   }
   .hero-section .btn-container {
-    margin-top: 125px; /* Reduce to the adjust that moves the hero-section h2 text upward */
+    margin-top: 125px; /* Reduce to the adjust the hero-section h2 text upward */
   }
 }
