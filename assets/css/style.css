@@ -283,7 +283,7 @@ a:hover {
   padding-top: calc(
     var(--navbar-height) + 2rem
   ); /* Space for fixed navbar plus badge*/
-  z-index: 3; /* Ensure content is above the overlay and the badge */
+  z-index: 2; /* Ensure content is above the overlay and the badge */
 }
 
 .hero-section .hero-content {
@@ -306,7 +306,7 @@ a:hover {
 
 .hero-section .btn-container {
   margin-top: 250px; /* Adjusts the container and moves the hero-section h2 text upward */
-  z-index: 3; /* Ensure content is above the overlay and the badge */
+  z-index: 2; /* Ensure content is above the overlay and the badge */
 }
 
 /* === Badge Styles === */
@@ -321,7 +321,7 @@ a:hover {
   text-align: center;
   font-size: 0.75rem; /* ~14px */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 2; /* Ensure badge is above other content */
+  z-index: 3; /* Ensure badge is above other content */
 }
 
 /* Animation for pulsing effect */
