@@ -184,7 +184,7 @@ a:hover {
 .navbar {
   background-color: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-bg-border);
-  z-index: 1000;
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .navbar-toggler {
@@ -200,7 +200,7 @@ a:hover {
 
 .navbar-nav .nav-link.active {
   color: var(--color-text-secondary);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .navbar-nav .nav-link.show {
@@ -212,9 +212,9 @@ a:hover {
 }
 
 .navbar .nav-link:focus-visible {
-  box-shadow: 0 0 0 0.15rem var(--color-link-hover);
-  border-radius: 3px;
-  outline: -webkit-focus-ring-color auto 1px;
+  box-shadow: 0 0 0 0.15rem var(--color-link-hover); /* Focus ring */
+  border-radius: 3px; /* Match Bootstrap's default */
+  outline: -webkit-focus-ring-color auto 1px; /* Focus outline */
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
@@ -237,7 +237,7 @@ a:hover {
 
 .dropdown-menu .dropdown-item.active {
   color: var(--color-text-secondary);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -257,32 +257,37 @@ a:hover {
 }
 
 .hero-section {
-  background: var(--image-hero);
-  padding-top: 100px;
+  position: relative;
   height: 100vh; /* Full viewport height */
-  min-height: 600px;
+  min-height: 600px; /* Minimum height */
+  display: flex;
+  align-items: center;
+  background: var(--image-hero);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   /* background-attachment: scroll; */ /* no parallax */
-  display: flex;
-  align-items: center;
-  position: relative;
+  z-index: 0;
 }
 
 .hero-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(0, 0, 0, 0.3); /* Overlay with transparency */
+  z-index: 1;
+}
+
+.hero-section .hero-div {
+  position: relative;
+  padding-top: calc(
+    var(--navbar-height) + 2rem
+  ); /* Space for fixed navbar plus badge*/
+  z-index: 3; /* Ensure content is above the overlay and the badge */
 }
 
 .hero-section .hero-content {
-  position: relative;
-  z-index: 1;
+  margin-top: 0; /*No margin top */
 }
 
 .hero-section h2 {
@@ -299,8 +304,45 @@ a:hover {
   font-size: 1.333rem; /* ~24px */
 }
 
-.btn-container {
-  margin: 125px auto; /* Adjusts the container and moves the hero-section h1 text upward */
+.hero-section .btn-container {
+  margin-top: 250px; /* Adjusts the container and moves the hero-section h2 text upward */
+  z-index: 3; /* Ensure content is above the overlay and the badge */
+}
+
+/* === Badge Styles === */
+.hero-badge {
+  position: absolute;
+  top: calc(var(--navbar-height) + 5vh);
+  right: 10vw;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 75px !important;
+  padding: 1rem 1rem;
+  text-align: center;
+  font-size: 0.75rem; /* ~14px */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Ensure badge is above other content */
+}
+
+/* Animation for pulsing effect */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(224, 231, 232, 0.8); /* Initial shadow --color-btn-bg-secondary-hover */
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 30px rgba(59, 174, 160, 0); /* Expand shadow and fade out */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 174, 160, 0); /* Reset shadow */
+  }
 }
 
 .btn {
@@ -310,10 +352,17 @@ a:hover {
   border: none;
 }
 
+/* Focus styles for accessibility */
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.15rem var(--color-link-hover); /* Focus ring */
+  border-radius: 3px; /* Match Bootstrap's default */
+  outline: -webkit-focus-ring-color auto 1px; /* Focus outline */
+}
+
 .btn-brand {
   background-color: var(--color-btn-bg-primary);
   color: var(--color-text-primary);
-  border: 1px solid transparent;
+  border: 1px solid transparent; /* Prevents layout shift on hover */
 }
 
 .btn-brand:hover,
@@ -321,13 +370,13 @@ a:hover {
 .btn-brand:focus {
   background-color: var(--color-btn-bg-primary-hover) !important;
   color: var(--color-text-inverse) !important;
-  border: 1px solid transparent !important;
+  border: 1px solid transparent !important; /* Prevents layout shift on hover */
 }
 
 .btn-brand-secondary {
   background-color: var(--color-btn-bg-secondary);
   color: var(--color-text-inverse);
-  border: 1px solid transparent;
+  border: 1px solid transparent; /* Prevents layout shift on hover */
 }
 
 .btn-brand-secondary:hover,
@@ -335,7 +384,7 @@ a:hover {
 .btn-brand-secondary:focus {
   background-color: var(--color-btn-bg-secondary-hover) !important;
   color: var(--color-text-primary) !important;
-  border: 1px solid var(--color-btn-border-secondary) !important;
+  border: 1px solid var(--color-btn-border-secondary) !important; /* Prevents layout shift on hover */
 }
 
 img {
@@ -399,7 +448,7 @@ img {
 .team-linkedin-icon:hover {
   color: var(--color-link-hover);
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
 .icon {
@@ -579,7 +628,7 @@ footer .social-icons svg {
 
 footer .social-icons a:hover {
   color: var(--color-link-hover);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
 footer .external-icons {
@@ -679,6 +728,14 @@ footer .external-icons {
     font-size: 1.435rem; /* ~23px */
   }
 
+  .hero-section h2 {
+    font-size: 2.75rem; /* 44px */
+  }
+
+  .hero-section p {
+    font-size: 1.175rem; /* ~19px */
+  }
+
   .image-style-1,
   .image-style-2,
   .image-style-3,
@@ -726,10 +783,12 @@ footer .external-icons {
     padding-top: var(--navbar-height-md);
   }
 
-  .hero-section-badge.show {
-    top: calc(
-      var(--navbar-height-md) + 40px
-    ); /* Adjust position below navbar */
+  .hero-section h2 {
+    font-size: 2.25rem; /* 36px */
+  }
+
+  .hero-section p {
+    font-size: 1.125rem; /* 18px */
   }
 
   .ul-style-1 {
@@ -743,13 +802,21 @@ footer .external-icons {
     padding-top: var(--navbar-height-sm);
   }
 
-  .hero-section-badge.show {
-    top: calc(
-      var(--navbar-height-sm) + 40px
-    ); /* Adjust position below navbar */
-  }
-
   .row-cols-1 .price-highlight-field {
     margin-top: calc(1.5rem + 2rem); /* py-4 + 36px */
+  }
+}
+
+/* === Responsive: content on screens < 700px height === */
+@media (max-height: 700px) {
+  .hero-section {
+    align-items: start; /* Align items to the top */
+  }
+
+  .hero-section .hero-content {
+    margin-top: 7.5vh; /* Reduce to 7.5% of the viewport height */
+  }
+  .hero-section .btn-container {
+    margin-top: 125px; /* Reduce to the adjust that moves the hero-section h2 text upward */
   }
 }
