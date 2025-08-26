@@ -768,6 +768,10 @@ footer .external-icons {
     height: calc(1.675rem + 0.9vw); /* Match h3 + viewport width */
   }
 
+  .ul-style-1 {
+    margin-bottom: 0px !important;
+  }
+
   .price-text-1 {
     font-size: 1.435rem; /* ~23px */
   }
@@ -793,10 +797,6 @@ footer .external-icons {
 
   .hero-badge {
     right: 7.5vw;
-  }
-
-  .ul-style-1 {
-    margin-bottom: 0px !important;
   }
 }
 
