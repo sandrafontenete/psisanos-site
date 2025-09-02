@@ -204,7 +204,7 @@ a:hover {
 .navbar-toggler:hover,
 .navbar-toggler:active {
   color: var(--color-text-secondary);
-  border-color: var(--color-link-hover);
+  border-color: var(--color-text-secondary);
 }
 
 .navbar-toggler:focus {
