@@ -82,10 +82,12 @@
 }
 
 /* === Theme === */
+/* Set base font size to 18px for better readability */
 html {
   font-size: 18px;
 }
 
+/* === Body Styles === */
 body {
   font-family: var(--font-body);
   font-size: 1rem; /* 18px */
@@ -107,6 +109,7 @@ body .box-alt-border {
   border-top: 1px solid var(--color-bg-border);
 }
 
+/* === Headings === */
 h1,
 h2,
 h3,
@@ -171,6 +174,7 @@ h3.alt-h5 {
   font-size: 1.111rem !important; /* ~20px */
 }
 
+/* === Link Styles === */
 a {
   font-weight: 700;
   transition: all 0.3s ease;
@@ -181,14 +185,73 @@ a:hover {
   color: var(--color-link-hover);
 }
 
+/* === Navbar Styles === */
 .navbar {
   background-color: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-bg-border);
   z-index: 1000; /* Ensure it stays above other content */
 }
 
+/* Navbar toggler button */
 .navbar-toggler {
+  position: relative; /* For positioning the icons absolutely within */
+  width: 2.5em; /* 40px */
+  height: 2em; /* 32px */
   color: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:active {
+  color: var(--color-text-secondary);
+  border-color: var(--color-link-hover);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar .navbar-toggler:focus-visible {
+  box-shadow: 0 0 0 0.15rem var(--color-link-hover); /* Focus ring */
+  border-radius: 0.375rem; /* Match Bootstrap's default */
+  outline: -webkit-focus-ring-color auto 1px; /* Focus outline */
+}
+
+/* Navbar toggler icons */
+.navbar-toggler-icon,
+.navbar-toggler-icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5em; /* 24px */
+  height: 1.5em; /* 24px */
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Bootstrap default hamburger icon with slight modifications: color-text-secondary*/
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(84, 123, 140,0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  opacity: 1;
+}
+
+/* Close icon with slight modifications: color-text-secondary*/
+.navbar-toggler-icon-close {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(84, 123, 140,0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M7 7l16 16M23 7L7 23'/%3e%3c/svg%3e") !important;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9) rotate(20deg);
+}
+
+/* Show close icon when toggler has 'show-close' class */
+.navbar-toggler.show-close .navbar-toggler-icon {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9) rotate(-20deg);
+}
+
+.navbar-toggler.show-close .navbar-toggler-icon-close {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 
 .navbar .nav-link {
@@ -213,7 +276,7 @@ a:hover {
 
 .navbar .nav-link:focus-visible {
   box-shadow: 0 0 0 0.15rem var(--color-link-hover); /* Focus ring */
-  border-radius: 3px; /* Match Bootstrap's default */
+  border-radius: 0.375rem; /* Match Bootstrap's default */
   outline: -webkit-focus-ring-color auto 1px; /* Focus outline */
 }
 
@@ -256,6 +319,7 @@ a:hover {
   color: var(--color-text-secondary) !important;
 }
 
+/* === Hero Section Styles === */
 .hero-section {
   position: relative;
   height: 100vh; /* Full viewport height */
@@ -345,6 +409,7 @@ a:hover {
   }
 }
 
+/* === Button Styles === */
 .btn {
   padding: 0.6rem 1.2rem;
   font-weight: 700;
@@ -355,7 +420,7 @@ a:hover {
 /* Focus styles for accessibility */
 .btn:focus-visible {
   box-shadow: 0 0 0 0.15rem var(--color-link-hover); /* Focus ring */
-  border-radius: 3px; /* Match Bootstrap's default */
+  border-radius: 0.375rem; /* Match Bootstrap's default */
   outline: -webkit-focus-ring-color auto 1px; /* Focus outline */
 }
 
@@ -387,6 +452,7 @@ a:hover {
   border: 1px solid var(--color-btn-border-secondary) !important; /* Prevents layout shift on hover */
 }
 
+/* === Image Styles === */
 img {
   width: 100%;
 }
@@ -426,8 +492,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem; /* ~40px */
-  height: 2.25rem; /* ~40px */
+  width: 3rem; /* 54px */
+  height: 3rem; /* 54px */
   border-radius: 50%;
   background: var(--color-bg-surface-alt);
   color: var(--color-text-secondary);
@@ -440,7 +506,7 @@ img {
 }
 
 .team-linkedin-icon svg {
-  height: 1.555rem; /* ~28px */
+  height: 2.25rem; /* 45px */
   aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   fill: currentColor;
 }
@@ -458,6 +524,7 @@ img {
   fill: currentColor;
 }
 
+/* === Accordion Styles === */
 .accordion-button:not(.collapsed) {
   background-color: var(--color-text-secondary);
   color: var(--color-text-inverse);
@@ -523,6 +590,7 @@ img {
   border-color: var(--color-text-secondary);
 }
 
+/* === Payment Icons === */
 .payment-icons-1 {
   max-height: 65px;
   width: auto;
@@ -574,6 +642,7 @@ img {
   color: var(--color-text-primary) !important; /* Table text color */
 }
 
+/* === Footer Styles === */
 footer {
   background-color: var(--color-bg-surface);
   color: var(--color-text-primary);
@@ -636,6 +705,7 @@ footer .external-icons {
   width: auto;
 }
 
+/* === Cookie Banner Styles === */
 #cookie-banner {
   position: relative;
   border-top: 1px solid var(--color-bg-border);
@@ -785,6 +855,28 @@ footer .external-icons {
 @media (max-width: 767.98px) {
   body {
     padding-top: var(--navbar-height-md);
+  }
+
+  /* Always show dropdowns in navbar */
+  .navbar-nav > .dropdown > .dropdown-menu {
+    display: block !important; /* always show */
+    position: static !important; /* position in flow */
+    float: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove dropdown arrow */
+  .navbar .dropdown-toggle::after {
+    display: none;
+  }
+
+  /* Style dropdown items - spacing and padding */
+  .navbar-nav > .dropdown > .dropdown-menu .dropdown-item {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-section h2 {
