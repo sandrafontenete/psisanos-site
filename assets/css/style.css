@@ -644,6 +644,7 @@ img {
 
 /* === Footer Styles === */
 footer {
+  border-top: 1px solid var(--color-bg-border);
   background-color: var(--color-bg-surface);
   color: var(--color-text-primary);
 }
@@ -855,6 +856,20 @@ footer .external-icons {
 @media (max-width: 767.98px) {
   body {
     padding-top: var(--navbar-height-md);
+  }
+
+  /* Add border and padding to separate from other nav items */
+  .navbar .navbar-collapse {
+    border-top: 1px solid var(--color-bg-border);
+    margin-top: 0.5rem; /* Space from other nav items */
+    padding-top: 0.5rem; /* Padding for visual separation */
+  }
+
+  /* Make nav headings non-clickable */
+  .nav-heading {
+    cursor: default; /* Disable pointer cursor */
+    pointer-events: none; /* Disable click events */
+    text-decoration: none; /* No underline on hover */
   }
 
   /* Always show dropdowns in navbar */
