@@ -315,7 +315,7 @@ function setConsent(granted) {
  * Initialize cookie consent banner logic and event listeners
  */
 function initCookieConsent() {
-  loadTagManager();
+  //loadTagManager();
 
   //injectNoScript();
 
