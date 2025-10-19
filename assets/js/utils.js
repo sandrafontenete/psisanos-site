@@ -238,16 +238,19 @@ function loadTagManager() {
   script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
   document.head.appendChild(script);
 
-  logDebug("GTM script loaded dynamically (always loaded).");
+  logDebug("GTM script loaded dynamically.");
 }
 
 function injectNoScript() {
   if (document.getElementById('gtm-noscript')) return;
 
+  // Create GTM script element
   const noscript = document.createElement('noscript');
   noscript.id = 'gtm-noscript';
   noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
   document.body.prepend(noscript);
+
+  logDebug("GTM <noscript> iframe injected dynamically.");
 }
 
 /**
@@ -314,7 +317,7 @@ function setConsent(granted) {
 function initCookieConsent() {
   loadTagManager();
 
-  injectNoScript();
+  //injectNoScript();
 
   if (!banner) return;
 
