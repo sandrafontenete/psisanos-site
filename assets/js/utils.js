@@ -3,7 +3,7 @@
 // ==========================
 // Constants
 // ==========================
-const DEBUG = true; // Set to false to disable debug logs
+const DEBUG = false; // Set to false to disable debug logs
 const START_YEAR = 2025; // Website launch year
 const MAX_CONSENT_AGE_DAYS = 30; // Max days before re-prompting for consent
 const GTM_ID = "GTM-KWWXZQC6"; // Google Tag Manager ID
@@ -208,15 +208,15 @@ function loadTagManager() {
   window.dataLayer.push({
     event: "default_consent",
     "gtm.consent": {
-      // Always-granted essential consent (security & functionality)
-      security_storage: "granted",
-      functionality_storage: "granted",
-      // Optional consents controlled by user (ads, analytics, personalization)
+      // Consent mode parameters
       ad_storage: "denied",
-      analytics_storage: "denied",
-      personalization_storage: "denied",
       ad_user_data: "denied",
       ad_personalization: "denied",
+      analytics_storage: "denied",
+      // Privacy parameters
+      functionality_storage: "granted", // Essential consent (functionality)
+      personalization_storage: "denied",
+      security_storage: "granted", // Essential consent (security)
     },
   });
   logDebug("Default GTM Consent Mode initialized.");
@@ -241,12 +241,15 @@ function loadTagManager() {
   logDebug("GTM script loaded dynamically.");
 }
 
+/**
+ * Load Google Tag Manager <noscript> iframe dynamically
+ */
 function injectNoScript() {
-  if (document.getElementById('gtm-noscript')) return;
+  if (document.getElementById("gtm-noscript")) return;
 
   // Create GTM script element
-  const noscript = document.createElement('noscript');
-  noscript.id = 'gtm-noscript';
+  const noscript = document.createElement("noscript");
+  noscript.id = "gtm-noscript";
   noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
   document.body.prepend(noscript);
 
@@ -260,26 +263,26 @@ function injectNoScript() {
 function updateConsentMode(granted) {
   const consentSettings = granted
     ? {
-        // Always-granted essential consent (security & functionality)
-        security_storage: "granted",
-        functionality_storage: "granted",
-        // Optional consents controlled by user (ads, analytics, personalization)
+        // Consent mode parameters
         ad_storage: "granted",
-        analytics_storage: "granted",
-        personalization_storage: "granted",
         ad_user_data: "granted",
         ad_personalization: "granted",
+        analytics_storage: "granted",
+        // Privacy parameters
+        functionality_storage: "granted", // Essential consent (functionality)
+        personalization_storage: "granted",
+        security_storage: "granted", // Essential consent (security)
       }
     : {
-        // Always-granted essential consent (security & functionality)
-        security_storage: "granted",
-        functionality_storage: "granted",
-        // Optional consents controlled by user (ads, analytics, personalization)
+        // Consent mode parameters
         ad_storage: "denied",
-        analytics_storage: "denied",
-        personalization_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
+        analytics_storage: "denied",
+        // Privacy parameters
+        functionality_storage: "granted", // Essential consent (functionality)
+        personalization_storage: "denied",
+        security_storage: "granted", // Essential consent (security)
       };
 
   window.dataLayer.push({
@@ -315,9 +318,9 @@ function setConsent(granted) {
  * Initialize cookie consent banner logic and event listeners
  */
 function initCookieConsent() {
-  //loadTagManager();
+  loadTagManager();
 
-  //injectNoScript();
+  injectNoScript();
 
   if (!banner) return;
 
