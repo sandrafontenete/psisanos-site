@@ -227,6 +227,10 @@ function loadTagManager() {
     event: "gtm.js",
   });
 
+  // Create a comment node
+  const comment = document.createComment(" Google Tag Manager ");
+  document.head.appendChild(comment);
+
   // Create GTM script element
   const script = document.createElement("script");
   script.id = "gtm-script";
@@ -235,6 +239,15 @@ function loadTagManager() {
   document.head.appendChild(script);
 
   logDebug("GTM script loaded dynamically (always loaded).");
+}
+
+function injectNoScript() {
+  if (document.getElementById('gtm-noscript')) return;
+
+  const noscript = document.createElement('noscript');
+  noscript.id = 'gtm-noscript';
+  noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+  document.body.prepend(noscript);
 }
 
 /**
@@ -300,6 +313,8 @@ function setConsent(granted) {
  */
 function initCookieConsent() {
   loadTagManager();
+
+  injectNoScript();
 
   if (!banner) return;
 
