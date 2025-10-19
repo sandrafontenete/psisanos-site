@@ -3,7 +3,7 @@
 // ==========================
 // Constants
 // ==========================
-const DEBUG = false; // Set to false to disable debug logs
+const DEBUG = true; // Set to false to disable debug logs
 const START_YEAR = 2025; // Website launch year
 const MAX_CONSENT_AGE_DAYS = 30; // Max days before re-prompting for consent
 const GTM_ID = "GTM-KWWXZQC6"; // Google Tag Manager ID
@@ -125,24 +125,6 @@ function initDynamicYear() {
 // ==========================
 
 /**
- * Initialize Cookie Consent Banner logic
- * with Google Tag Manager Consent Mode v2 integration.
- * Defaults to denied consent until user makes a choice.
- * Uses localStorage to persist consent state.
- */
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: "default_consent",
-  "gtm.consent": {
-    ad_storage: "denied",
-    analytics_storage: "denied",
-    ad_personalization: "denied",
-    ad_user_data: "denied",
-  },
-});
-logDebug("Default GTM consent set to denied.");
-
-/**
  * Safely get and parse item from localStorage
  * handles JSON parsing errors
  * @param {string} key The localStorage key to retrieve
@@ -197,36 +179,12 @@ function hasConsentExpired(timestamp) {
 }
 
 /**
- * Update Consent Mode via dataLayer for GTM
- * @param {boolean} granted True to grant consent, false to deny
- */
-function updateConsentMode(granted) {
-  const consentSettings = granted
-    ? {
-        ad_storage: "granted",
-        analytics_storage: "granted",
-        ad_personalization: "granted",
-        ad_user_data: "granted",
-      }
-    : {
-        ad_storage: "denied",
-        analytics_storage: "denied",
-        ad_personalization: "denied",
-        ad_user_data: "denied",
-      };
-
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "gtm.consentUpdate",
-    "gtm.consent": consentSettings,
-  });
-
-  logDebug("GTM consent mode updated ->", consentSettings);
-}
-
-/**
- * Load Google Tag Manager script dynamically with Consent Mode v2
- * Ensures script is only loaded once.
+ * Load Google Tag Manager script dynamically with Consent Mode V2
+ * Initialize Cookie Consent Banner logic
+ * with Google Tag Manager Consent Mode V2 integration.
+ * Defaults to denied consent until user makes a choice.
+ * Uses localStorage to persist consent state.
+ * Ensures script is only loaded always.
  */
 function loadTagManager() {
   // Check if GTM ID is valid
@@ -243,8 +201,25 @@ function loadTagManager() {
   // Check if GTM script is already loaded
   if (document.getElementById("gtm-script")) return;
 
-  // Create the dataLayer array if not present
+  // Initialize dataLayer if not already defined
   window.dataLayer = window.dataLayer || [];
+
+  // Default Consent Mode V2 initialization
+  window.dataLayer.push({
+    event: "default_consent",
+    "gtm.consent": {
+      // Always-granted essential consent (security & functionality)
+      security_storage: "granted",
+      functionality_storage: "granted",
+      // Optional consents controlled by user (ads, analytics, personalization)
+      ad_storage: "denied",
+      analytics_storage: "denied",
+      personalization_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    },
+  });
+  logDebug("Default GTM Consent Mode initialized.");
 
   // Push the GTM start event as in official snippet
   window.dataLayer.push({
@@ -259,7 +234,44 @@ function loadTagManager() {
   script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
   document.head.appendChild(script);
 
-  logDebug("GTM script loaded dynamically.");
+  logDebug("GTM script loaded dynamically (always loaded).");
+}
+
+/**
+ * Update Consent Mode via dataLayer for GTM
+ * @param {boolean} granted True to grant consent, false to deny
+ */
+function updateConsentMode(granted) {
+  const consentSettings = granted
+    ? {
+        // Always-granted essential consent (security & functionality)
+        security_storage: "granted",
+        functionality_storage: "granted",
+        // Optional consents controlled by user (ads, analytics, personalization)
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        personalization_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+      }
+    : {
+        // Always-granted essential consent (security & functionality)
+        security_storage: "granted",
+        functionality_storage: "granted",
+        // Optional consents controlled by user (ads, analytics, personalization)
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        personalization_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      };
+
+  window.dataLayer.push({
+    event: "gtm.consentUpdate",
+    "gtm.consent": consentSettings,
+  });
+
+  logDebug("GTM consent mode updated ->", consentSettings);
 }
 
 /**
@@ -274,10 +286,11 @@ function setConsent(granted) {
 
   safeLocalStorageSet("cookieConsent", consentValue);
   safeLocalStorageSet("cookieConsentAt", now.toISOString());
+
   banner?.setAttribute("hidden", "true");
+
   updateConsentMode(granted);
-  // Load GTM if consent granted
-  if (granted) loadTagManager();
+
   logDebug(`Consent set -> ${consentValue}`);
   logDebug(`ConsentAt set -> ${now.toISOString()}`);
 }
@@ -286,26 +299,23 @@ function setConsent(granted) {
  * Initialize cookie consent banner logic and event listeners
  */
 function initCookieConsent() {
+  loadTagManager();
+
   if (!banner) return;
 
   const { consent, timestamp } = getStoredConsent();
 
   if (!consent || hasConsentExpired(timestamp)) {
     banner.removeAttribute("hidden"); // Show banner
-    updateConsentMode(false); // Deny consent by default
+    updateConsentMode(false); // Explicit deny by default
     logDebug("Cookie banner shown, consent denied by default.");
   } else {
     banner.setAttribute("hidden", "true"); // Hide banner
-    // Set consent mode accordingly
-    updateConsentMode(consent === "accepted");
-    // Load GTM if consent was accepted
-    if (consent === "accepted") {
-      loadTagManager();
-      logDebug(`Consent already stored -> ${consent}`);
-    }
+    updateConsentMode(consent === "accepted"); // Explicit update
+    logDebug(`Consent already stored -> ${consent}`);
   }
 
-  // Event listeners
+  // Attach event listeners to cookie banner buttons
   // Accept button
   acceptBtn?.addEventListener("click", () => setConsent(true));
 
