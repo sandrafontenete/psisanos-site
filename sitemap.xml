@@ -26,22 +26,29 @@
     <changefreq>monthly</changefreq>
   </url>
 
+    <url>
+    <loc>https://www.psisanos.pt/servicos/precario/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
   <url>
-    <loc>https://www.psisanos.pt/servicos/apoio-parental/</loc>
+    <loc>https://www.psisanos.pt/especialidades/apoio-parental/</loc>
     <lastmod>2025-11-01</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.psisanos.pt/servicos/terapia-casal/</loc>
+    <loc>https://www.psisanos.pt/especialidades/infertilidade/</loc>
     <lastmod>2025-11-01</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.psisanos.pt/servicos/infertilidade/</loc>
+    <loc>https://www.psisanos.pt/especialidades/terapia-casal/</loc>
     <lastmod>2025-11-01</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -54,7 +61,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Informational pages -->
+  <!-- Information pages -->
   <url>
     <loc>https://www.psisanos.pt/faq/</loc>
     <lastmod>2025-11-01</lastmod>
