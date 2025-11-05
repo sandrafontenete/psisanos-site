@@ -4,6 +4,8 @@ User-agent: *
 Allow: /
 
 # Block informational pages not relevant for SEO:
+Disallow: /servicos/precario/
+Disallow: /faq/
 Disallow: /politica-privacidade/
 Disallow: /termos-condicoes/
 

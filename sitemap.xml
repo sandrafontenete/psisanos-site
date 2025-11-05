@@ -11,7 +11,7 @@
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Main navigation pages -->
+  <!-- Main Navigation Pages -->
   <url>
     <loc>https://www.psisanos.pt/sobre-nos/</loc>
     <lastmod>2025-11-01</lastmod>
@@ -61,7 +61,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Information pages -->
+  <!-- Information Pages -->
   <url>
     <loc>https://www.psisanos.pt/faq/</loc>
     <lastmod>2025-11-01</lastmod>
