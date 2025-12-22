@@ -41,6 +41,7 @@
   --color-text-secondary: #547b8c;
   --color-text-inverse: #ffffff;
   --color-text-accent: #888888;
+  --color-text-muted: #7a7a7a;
 
   /* === Buttons & Links === */
   --color-btn-bg-primary: #e0e7e8;
@@ -568,6 +569,15 @@ img {
   font-weight: 700;
   color: var(--color-text-secondary);
   font-size: 1.775rem; /* ~32px */
+}
+
+.price-line-through {
+  display: inline;
+  color: var(--color-text-muted);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 55%;
 }
 
 .price-text-small {
