@@ -374,6 +374,10 @@ a:hover {
   z-index: 2; /* Ensure content is above the overlay and the badge */
 }
 
+.hero-btn {
+  max-width: 20rem; /* Limit button width */
+}
+
 /* === Badge Styles === */
 .hero-badge {
   position: absolute;
@@ -456,10 +460,6 @@ a:hover {
 /* === Image Styles === */
 img {
   width: 100%;
-}
-
-.h-100 {
-  height: 100% !important;
 }
 
 .image-style-1,
@@ -546,7 +546,7 @@ img {
 
 /* === Pricing Cards === */
 .row-cols-1 .col-style-1 {
-  max-width: 325px;
+  max-width: 325px; /* Maximum width for the pricing cards */
   margin-left: auto;
   margin-right: auto;
 }
@@ -598,6 +598,12 @@ img {
 
 .price-highlight-border {
   border-color: var(--color-text-secondary);
+}
+
+/* Pricing note style */
+.pricing-note {
+  color: var(--color-text-primary);
+  padding-left: calc(var(--bs-gutter-x) / 2); /* Match Bootstrap's gutter */
 }
 
 /* === Payment Icons === */
