@@ -154,7 +154,7 @@
             "name": "É possível marcar consultas para o próprio dia?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sempre que possível, procura-se acomodar consultas no próprio dia em situações de urgência. Recomenda-se, contudo, que as marcações sejam realizadas com antecedência, de forma a garantir horários disponíveis e um atendimento adequado."
+              "text": "Sempre que possível, poderão ser disponibilizados horários no próprio dia, dependendo da disponibilidade. Recomenda-se, contudo, que as marcações sejam realizadas com antecedência, de forma a garantir horários disponíveis e um atendimento adequado."
             }
           },
           {
@@ -170,7 +170,7 @@
             "name": "É necessário pagar antes da consulta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. O pagamento deverá ser efetuado antes da consulta para garantir a marcação. Recomenda-se que o pagamento seja realizado com pelo menos 48 horas de antecedência, permitindo tempo útil para confirmação."
+              "text": "Sim. O pagamento deverá ser efetuado antes da consulta para garantir a marcação. O pagamento deverá ser efetuado até 48 horas úteis antes da sessão, sendo a marcação considerada confirmada apenas após validação do pagamento."
             }
           },
           {
@@ -178,7 +178,7 @@
             "name": "Como saber se a consulta foi agendada corretamente?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Após o agendamento da consulta, receberá um email de confirmação com todos os detalhes, incluindo data, hora e orientações para o dia da sessão."
+              "text": "Após validação do pagamento, receberá um email de confirmação com todos os detalhes da sessão, incluindo data, hora e orientações para o dia da consulta."
             }
           },
           {
@@ -186,7 +186,7 @@
             "name": "O que acontece na primeira sessão?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A primeira sessão é direcionada à avaliação inicial. É realizada uma recolha de informações (anamnese) para compreender as necessidades, expectativas e histórico da pessoa, definindo objetivos terapêuticos em conjunto."
+              "text": "A primeira sessão é direcionada à entrevista clínica. É realizada uma recolha de informações (anamnese) para compreender as necessidades, expectativas e histórico da pessoa, definindo objetivos terapêuticos em conjunto."
             }
           },
           {
@@ -210,7 +210,7 @@
             "name": "Qual a duração de uma sessão?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "As sessões de terapia individual têm uma duração aproximada de 50 minutos. As consultas de terapia de casal têm, em média, 60 minutos de duração."
+              "text": "As consultas têm, regra geral, uma duração aproximada de 50 minutos. A primeira consulta destina-se à entrevista clínica (anamnese) e pode ter até 90 minutos. Alguns tipos de consulta poderão ter uma duração diferente, previamente acordada."
             }
           },
           {
@@ -234,7 +234,7 @@
             "name": "É possível interromper o processo terapêutico?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Durante o acompanhamento, poderá, em qualquer momento, decidir interromper o processo terapêutico, caso entenda que não pretende dar continuidade."
+              "text": "Durante o acompanhamento, poderá, em qualquer momento, decidir interromper o processo terapêutico, caso entenda que não pretende dar continuidade, mediante comunicação dessa decisão."
             }
           },
           {
@@ -242,7 +242,7 @@
             "name": "É possível cancelar ou remarcar uma consulta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. Caso necessite de cancelar ou remarcar, solicita-se que o faça com pelo menos 24 horas de antecedência. Cancelamentos tardios ou faltas sem aviso prévio poderão implicar o pagamento de 50% do valor da consulta."
+              "text": "Sim. Caso necessite de cancelar ou remarcar, solicita-se que o faça com pelo menos 24 horas de antecedência. Cancelamentos efetuados com menos de 24 horas de antecedência, bem como faltas sem aviso prévio, não conferem direito a reembolso, sendo a sessão considerada realizada."
             }
           },
           {
@@ -250,7 +250,15 @@
             "name": "O que acontece em caso de atraso?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Em caso de atraso, a sessão decorrerá apenas durante o tempo restante do horário previamente agendado, para não interferir com os atendimentos seguintes. O valor da consulta mantém-se inalterado. Se, por outro lado, o atraso for da responsabilidade do terapeuta, o tempo será compensado, prolongando a sessão (se possível) ou acrescentando esse tempo numa consulta futura."
+              "text": "Existe uma tolerância máxima de 15 minutos. Após esse período, a sessão será considerada realizada, não havendo lugar a reembolso. Se o atraso for inferior a 15 minutos, a sessão decorrerá apenas durante o tempo restante do horário agendado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se o atraso for do psicólogo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Se o atraso for superior a 15 minutos, poderá optar pelo reagendamento da sessão ou solicitar o reembolso."
             }
           }
         ]
@@ -369,9 +377,13 @@
       <!-- FAQ Section -->
       <section aria-labelledby="faq-heading">
         <div class="container px-4 py-5 my-5">
-          <h1 id="faq-heading" class="alt-h2 text-center">
+          <h1 id="faq-heading" class="alt-h2 text-center pb-4 pb-sm-5">
             Perguntas Frequentes (FAQ)
           </h1>
+          <p>
+            As informações apresentadas têm carácter informativo e não
+            substituem os Termos e Condições.
+          </p>
 
           <div class="accordion accordion-flush" id="faqAccordion">
             <!-- Appointment and Scheduling -->
@@ -425,10 +437,11 @@
               >
                 <div class="accordion-body">
                   <p>
-                    Sempre que possível, procura-se acomodar consultas no
-                    próprio dia em situações de urgência. Recomenda-se, contudo,
-                    que as marcações sejam realizadas com antecedência, de forma
-                    a garantir horários disponíveis e um atendimento adequado.
+                    Sempre que possível, poderão ser disponibilizados horários
+                    no próprio dia, dependendo da disponibilidade. Recomenda-se,
+                    contudo, que as marcações sejam realizadas com antecedência,
+                    de forma a garantir horários disponíveis e um atendimento
+                    adequado.
                   </p>
                 </div>
               </div>
@@ -486,9 +499,9 @@
                 <div class="accordion-body">
                   <p>
                     Sim. O pagamento deverá ser efetuado antes da consulta para
-                    garantir a marcação. Recomenda-se que o pagamento seja
-                    realizado com pelo menos 48 horas de antecedência,
-                    permitindo tempo útil para confirmação.
+                    garantir a marcação. O pagamento deverá ser efetuado até 48
+                    horas úteis antes da sessão, sendo a marcação considerada
+                    confirmada apenas após validação do pagamento.
                   </p>
                 </div>
               </div>
@@ -514,9 +527,9 @@
               >
                 <div class="accordion-body">
                   <p>
-                    Após o agendamento da consulta, receberá um email de
-                    confirmação com todos os detalhes, incluindo data, hora e
-                    orientações para o dia da sessão.
+                    Após validação do pagamento, receberá um email de
+                    confirmação com todos os detalhes da sessão, incluindo data,
+                    hora e orientações para o dia da consulta.
                   </p>
                 </div>
               </div>
@@ -542,7 +555,7 @@
               >
                 <div class="accordion-body">
                   <p>
-                    A primeira sessão é direcionada à avaliação inicial. É
+                    A primeira sessão é direcionada à entrevista clínica. É
                     realizada uma recolha de informações (anamnese) para
                     compreender as necessidades, expectativas e histórico da
                     pessoa, definindo objetivos terapêuticos em conjunto.
@@ -632,9 +645,11 @@
               >
                 <div class="accordion-body">
                   <p>
-                    As sessões de terapia individual têm uma duração aproximada
-                    de 50 minutos. As consultas de terapia de casal têm, em
-                    média, 60 minutos de duração.
+                    As consultas têm, regra geral, uma duração aproximada de 50
+                    minutos. A primeira consulta destina-se à entrevista clínica
+                    (anamnese) e pode ter até 90 minutos. Alguns tipos de
+                    consulta poderão ter uma duração diferente, previamente
+                    acordada.
                   </p>
                 </div>
               </div>
@@ -721,7 +736,8 @@
                   <p>
                     Durante o acompanhamento, poderá, em qualquer momento,
                     decidir interromper o processo terapêutico, caso entenda que
-                    não pretende dar continuidade.
+                    não pretende dar continuidade, mediante comunicação dessa
+                    decisão.
                   </p>
                 </div>
               </div>
@@ -754,8 +770,9 @@
                   <p>
                     Sim. Caso necessite de cancelar ou remarcar, solicita-se que
                     o faça com pelo menos 24 horas de antecedência.
-                    Cancelamentos tardios ou faltas sem aviso prévio poderão
-                    implicar o pagamento de 50% do valor da consulta.
+                    Cancelamentos efetuados com menos de 24 horas de
+                    antecedência, bem como faltas sem aviso prévio, não conferem
+                    direito a reembolso, sendo a sessão considerada realizada.
                   </p>
                 </div>
               </div>
@@ -781,13 +798,38 @@
               >
                 <div class="accordion-body">
                   <p>
-                    Em caso de atraso, a sessão decorrerá apenas durante o tempo
-                    restante do horário previamente agendado, para não
-                    interferir com os atendimentos seguintes. O valor da
-                    consulta mantém-se inalterado. Se, por outro lado, o atraso
-                    for da responsabilidade do terapeuta, o tempo será
-                    compensado, prolongando a sessão (se possível) ou
-                    acrescentando esse tempo numa consulta futura.
+                    Existe uma tolerância máxima de 15 minutos. Após esse
+                    período, a sessão será considerada realizada, não havendo
+                    lugar a reembolso. Se o atraso for inferior a 15 minutos, a
+                    sessão decorrerá apenas durante o tempo restante do horário
+                    agendado.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading15">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse15"
+                  aria-expanded="false"
+                  aria-controls="collapse15"
+                >
+                  E se o atraso for do psicólogo?
+                </button>
+              </h3>
+              <div
+                id="collapse15"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+                aria-labelledby="heading15"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Se o atraso for superior a 15 minutos, poderá optar pelo
+                    reagendamento da sessão ou solicitar o reembolso.
                   </p>
                 </div>
               </div>
