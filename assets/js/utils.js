@@ -1,4 +1,11 @@
-/* === File: assets/js/utils.js === */
+/*!
+ * ==========================================================
+ * File: assets/js/utils.js
+ * Copyright (c) 2025 PsiSanos. All rights reserved.
+ * This file is part of the PsiSanos website.
+ * @version 0.1
+ * ==========================================================
+ */
 
 // ==========================
 // Constants
@@ -45,7 +52,7 @@ function initNavbarToggler() {
 
   if (!window.bootstrap) {
     console.warn(
-      "Bootstrap not found. Navbar toggler functionality will not be loaded."
+      "Bootstrap not found. Navbar toggler functionality will not be loaded.",
     );
     return;
   }
@@ -79,7 +86,7 @@ function initNavbarCollapse() {
 
   if (!window.bootstrap) {
     console.warn(
-      "Bootstrap not found. Navbar collapse functionality will not be loaded."
+      "Bootstrap not found. Navbar collapse functionality will not be loaded.",
     );
     return;
   }

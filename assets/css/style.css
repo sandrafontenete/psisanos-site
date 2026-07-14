@@ -1,4 +1,11 @@
-/* === File: assets/css/style.css === */
+/*!
+ * ==========================================================
+ * File: assets/css/style.css
+ * Copyright (c) 2025 PsiSanos. All rights reserved.
+ * This file is part of the PsiSanos website.
+ * @version 0.1
+ * ==========================================================
+ */
 
 /* === CSS for Lato Font Family === */
 @font-face {
@@ -228,7 +235,9 @@ a:hover {
   width: 1.5em; /* 24px */
   height: 1.5em; /* 24px */
   transform: translate(-50%, -50%) scale(1);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 /* Bootstrap default hamburger icon with slight modifications: color-text-secondary*/
