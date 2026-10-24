@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset 
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -6,7 +6,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://www.psisanos.pt/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -14,49 +14,49 @@
   <!-- Main Navigation Pages -->
   <url>
     <loc>https://www.psisanos.pt/sobre-nos/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/servicos/consultas/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
     <url>
     <loc>https://www.psisanos.pt/servicos/precario/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/especialidades/apoio-parental/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/especialidades/infertilidade/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/especialidades/terapia-casal/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/contactos/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -64,21 +64,21 @@
   <!-- Information Pages -->
   <url>
     <loc>https://www.psisanos.pt/faq/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.4</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/politica-privacidade/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
     <loc>https://www.psisanos.pt/termos-condicoes/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>

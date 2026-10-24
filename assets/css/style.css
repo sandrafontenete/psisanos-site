@@ -3,7 +3,7 @@
  * File: assets/css/style.css
  * Copyright (c) 2025 PsiSanos. All rights reserved.
  * This file is part of the PsiSanos website.
- * @version 0.1
+ * @version 0.2
  * ==========================================================
  */
 
@@ -87,6 +87,11 @@
   --navbar-height-sm: calc(
     var(--navbar-height) / 3
   ); /* Screens < SM Space for fixed navbar */
+
+  /* === Badge Height Calculation === */
+  --badge-height: 2rem; /* Fixed height of badge */
+  --badge-top: 5vh; /* Minimum top spacing for badge */
+  --badge-right: 10vw; /* Minimum right spacing for badge */
 }
 
 /* === Theme === */
@@ -154,31 +159,31 @@ h6 {
   font-size: 1rem; /* 18px */
 }
 
-h1.alt-h2 {
+h1.heading-2 {
   font-size: 1.775rem !important; /* ~32px */
 }
 
-h2.alt-h1 {
+h2.heading-1 {
   font-size: 2.25rem !important; /* ~40px */
 }
 
-h2.alt-h3 {
+h2.heading-3 {
   font-size: 1.555rem !important; /* ~28px */
 }
 
-h2.alt-h4 {
+h2.heading-4 {
   font-size: 1.333rem !important; /* ~24px */
 }
 
-h2.alt-h5 {
+h2.heading-5 {
   font-size: 1.111rem !important; /* ~20px */
 }
 
-h2.alt-h6 {
+h2.heading-6 {
   font-size: 1rem !important; /* 18px */
 }
 
-h3.alt-h5 {
+h3.heading-5 {
   font-size: 1.111rem !important; /* ~20px */
 }
 
@@ -355,13 +360,23 @@ a:hover {
 .hero-section .hero-div {
   position: relative;
   padding-top: calc(
-    var(--navbar-height) + 2rem
+    var(--navbar-height) + var(--badge-height)
   ); /* Space for fixed navbar plus badge*/
   z-index: 2; /* Ensure content is above the overlay and the badge */
 }
 
 .hero-section .hero-content {
   margin-top: 0; /*No margin top */
+}
+
+.hero-section h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 auto 10px;
+  color: var(--color-text-inverse);
+  opacity: 0.95;
 }
 
 .hero-section h2 {
@@ -379,7 +394,7 @@ a:hover {
 }
 
 .hero-section .btn-container {
-  margin-top: 250px; /* Adjusts the container and moves the hero-section h2 text upward */
+  margin-top: 250px; /* Adjusts the button container and moves the hero-section h1 and h2 text upward */
   z-index: 2; /* Ensure content is above the overlay and the badge */
 }
 
@@ -390,8 +405,10 @@ a:hover {
 /* === Badge Styles === */
 .hero-badge {
   position: absolute;
-  top: calc(var(--navbar-height) + 5vh);
-  right: 10vw;
+  top: calc(
+    var(--navbar-height) + var(--badge-top)
+  ); /* Position below the navbar with some spacing */
+  right: var(--badge-right); /* 10vw from the right edge */
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 75px !important;
@@ -404,7 +421,7 @@ a:hover {
 
 /* Animation for pulsing effect */
 .pulse {
-  animation: pulse 2s infinite;
+  animation: pulse 2s ease-out 3; /*  Alternate: 3 times, ease-out */
 }
 
 /* Keyframes for pulsing animation */
@@ -415,11 +432,18 @@ a:hover {
   }
   70% {
     transform: scale(1.05);
-    box-shadow: 0 0 0 30px rgba(59, 174, 160, 0); /* Expand shadow and fade out */
+    box-shadow: 0 0 0 20px rgba(59, 174, 160, 0); /* Expand shadow and fade out */
   }
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(59, 174, 160, 0); /* Reset shadow */
+  }
+}
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
   }
 }
 
@@ -792,31 +816,31 @@ footer .external-icons {
     font-size: 1rem; /* 16px */
   }
 
-  h1.alt-h2 {
+  h1.heading-2 {
     font-size: 1.935rem !important; /* ~31px */
   }
 
-  h2.alt-h1 {
+  h2.heading-1 {
     font-size: 2.25rem !important; /* 36px */
   }
 
-  h2.alt-h3 {
+  h2.heading-3 {
     font-size: 1.675rem !important; /* ~27px */
   }
 
-  h2.alt-h4 {
+  h2.heading-4 {
     font-size: 1.435rem !important; /* ~23px */
   }
 
-  h2.alt-h5 {
+  h2.heading-5 {
     font-size: 1.25rem !important; /* 20px */
   }
 
-  h2.alt-h6 {
+  h2.heading-6 {
     font-size: 1rem !important; /* 16px */
   }
 
-  h3.alt-h5 {
+  h3.heading-5 {
     font-size: 1.25rem !important; /* 20px */
   }
 
@@ -928,7 +952,7 @@ footer .external-icons {
   }
 
   .hero-badge {
-    right: 7.5vw;
+    right: calc(var(--badge-right) * 0.75); /* 7.5vw from the right edge */
   }
 }
 
@@ -938,8 +962,12 @@ footer .external-icons {
     padding-top: var(--navbar-height-sm);
   }
 
+  .hero-section .btn-container {
+    margin-top: 175px; /* Adjusts the button container and moves the hero-section h1 and h2 text upward */
+  }
+
   .hero-badge {
-    right: 5vw;
+    right: calc(var(--badge-right) * 0.5); /* 5vw from the right edge */
   }
 
   .row-cols-1 .price-highlight-field {
@@ -947,8 +975,22 @@ footer .external-icons {
   }
 }
 
+/* === Responsive: content on screens < 375px === */
+@media (max-width: 374.98px) {
+  .hero-section .btn-container {
+    margin-top: 150px; /* Adjusts the button container and moves the hero-section h1 and h2 text upward */
+  }
+}
+
+/* === Responsive: content on screens < 330px === */
+@media (max-width: 329.98px) {
+  .hero-section .btn-container {
+    margin-top: 125px; /* Adjusts the button container and moves the hero-section h1 and h2 text upward */
+  }
+}
+
 /* === Responsive: content on screens < 700px height === */
-@media (max-height: 700px) {
+@media (max-height: 699.98px) {
   .hero-section {
     align-items: start; /* Align items to the top */
   }
@@ -957,6 +999,6 @@ footer .external-icons {
     margin-top: 7.5vh; /* Reduce to 7.5% of the viewport height */
   }
   .hero-section .btn-container {
-    margin-top: 125px; /* Reduce to the adjust the hero-section h2 text upward */
+    margin-top: 125px; /* Adjusts the button container and moves the hero-section h1 and h2 text upward */
   }
 }
